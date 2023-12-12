@@ -1,6 +1,6 @@
 import unittest
 from selenium import webdriver
-from pages_.logInPage_.loginPage import LoginPage
+from pages_.logInPage_.logInPage import LoginPage
 from selenium.webdriver.support.events import EventFiringWebDriver
 from common_.utilities_.customListener import MyListener
 from testData_.testData import validUser, mainPageUrl, signInPageUrl
@@ -16,9 +16,8 @@ class BaseTestWithoutLogIn(unittest.TestCase):
         self.driver.maximize_window()
         self.driver.get(mainPageUrl)
 
-
-def tearDown(self):
-    self.driver.close()
+    def tearDown(self):
+        self.driver.close()
 
 
 class BaseTestWithLogIn(unittest.TestCase):
